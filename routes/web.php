@@ -19,4 +19,8 @@ $app->group([
     'prefix' => 'api/clients'
 ], function () use($app){
     $app->get('', 'ClientsController@index');
+    $app->get('{id}', 'ClientsController@show');
+    $app->post('', 'ClientsController@store');
+    $app->put('{id}', 'ClientsController@update');
+    $app->delete('{id}', 'ClientsController@destroy');
 });
