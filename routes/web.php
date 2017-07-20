@@ -24,3 +24,13 @@ $app->group([
     $app->put('{id}', 'ClientsController@update');
     $app->delete('{id}', 'ClientsController@destroy');
 });
+
+$app->group([
+    'prefix' => 'api/clients/{client}/addresses'
+], function () use($app){
+    $app->get('', 'AddressesController@index');
+    $app->get('{id}', 'AddressesController@show');
+    $app->post('', 'AddressesController@store');
+    $app->put('{id}', 'AddressesController@update');
+    $app->delete('{id}', 'AddressesController@destroy');
+});
